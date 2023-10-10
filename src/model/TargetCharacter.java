@@ -7,7 +7,7 @@ package model;
 public class TargetCharacter {
   private int health;
   private String name;
-  private int characterPositionIndex = 0;
+  private int characterPositionIndex;
   
   /**
    * Constructor for target character.
@@ -18,6 +18,7 @@ public class TargetCharacter {
   public TargetCharacter(int healthIn, String nameIn) {
     this.health = healthIn;
     this.name = nameIn;
+    this.characterPositionIndex = 0;
   }
 
   public int getHealth() {
