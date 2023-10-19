@@ -94,7 +94,7 @@ public class Room {
     boolean horizontallyAdjacent = ((this.lowerRightColumn == otherRoom.upperLeftColumn - 1)
         || (this.upperLeftColumn == otherRoom.lowerRightColumn + 1));
 
-    return (verticallyAdjacent || horizontallyAdjacent);
+    return (verticallyAdjacent && !horizontallyAdjacent) || (!verticallyAdjacent && horizontallyAdjacent);
   }
 
   /**
@@ -117,6 +117,8 @@ public class Room {
     for (Room visibleRoom : visibleRooms) {
       System.out.println("- " + visibleRoom.getName());
     }
+    
+    System.out.println(" ");
   }
 
   /**
@@ -153,5 +155,7 @@ public class Room {
     }
     return visibleRooms;
   }
+  
+  
 
 }

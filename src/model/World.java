@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * This class implements the WorldReader class. It takes in a text file with information about and
- * the world and then creates the world.
+ * This class implements the WorldReader class. It takes in a text file with
+ * information about and the world and then creates the world.
  */
 public class World implements WorldReader {
 
@@ -24,6 +24,7 @@ public class World implements WorldReader {
 
   /**
    * World object creation using text file.
+   * 
    * @param file takes in a file.
    */
   public World(File file) {
@@ -166,6 +167,7 @@ public class World implements WorldReader {
 
   /**
    * Method to get Room by using index.
+   * 
    * @param index position of the room.
    * @return room or null depending on validity of index
    */
@@ -178,9 +180,10 @@ public class World implements WorldReader {
 
     return null;
   }
-  
+
   /**
    * Method to get Neighbor Room by using index.
+   * 
    * @param roomIndex position of the room.
    * @return neighboring rooms.
    */
@@ -198,9 +201,10 @@ public class World implements WorldReader {
 
     return neighboringRooms;
   }
-  
+
   /**
-   *  Method to get Item(s) by using index.
+   * Method to get Item(s) by using index.
+   * 
    * @param roomIndex position of the room.
    * @return list of item(s)
    */
@@ -244,6 +248,10 @@ public class World implements WorldReader {
   public List<Item> getItems() {
 
     return items;
+  }
+
+  public void removeItem(Item item) {
+    items.remove(item);
   }
 
   public boolean isEnd() {

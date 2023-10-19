@@ -41,7 +41,9 @@ public class GameDriver {
       System.out.println("2- See neighbours by room index.");
       System.out.println("3- See items by room index.");
       System.out.println("4- Move target forward");
-      System.out.println("5- Create mansion image");
+      System.out.println("5- Show Info of all Rooms");
+      System.out.println("6- Create mansion image");
+      
       int option = scanner.nextInt();
 
       if (option == 1) {
@@ -49,6 +51,8 @@ public class GameDriver {
         System.out.println("Provide the index number");
         int index = scanner.nextInt();
         Room room = world.getRoomByIndex(index);
+        
+//        room.displayRoomInfo(world.getRooms(), world.getItems());
 
         if (room != null) {
           // Print room information
@@ -95,9 +99,17 @@ public class GameDriver {
         }
       } else if (option == 4) {
         targetCharacter.moveCharacterForward();
+        targetCharacter.moveCharacterForward();
+        
         int indexOfCharacter = targetCharacter.getCharacterPositionIndex();
         System.out.println("Target character is now in " + indexOfCharacter);
-      } else {
+      } else if (option == 5 ) {
+       for(int i = 0; i < 21; i++) { 
+       Room room = world.getRoomByIndex(i);
+       room.displayRoomInfo(world.getRooms(), world.getItems());
+      }
+      }
+      else{
         Image image = new Image(inputString);
       }
     }
