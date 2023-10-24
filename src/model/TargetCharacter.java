@@ -47,8 +47,9 @@ public class TargetCharacter {
   
   public void moveCharacterForward() {
 
-    if (characterPositionIndex > 21) {
-      throw new IllegalArgumentException("Invalid Movement");
+    if (characterPositionIndex > 20) {
+      
+      characterPositionIndex = 0;
     }
 
     characterPositionIndex += 1;
@@ -61,7 +62,8 @@ public class TargetCharacter {
   public void moveCharacterBackward() {
 
     if (characterPositionIndex < 0) {
-      throw new IllegalArgumentException("Invalid Movement");
+      
+      characterPositionIndex = 20;
     }
     characterPositionIndex -= 1;
 

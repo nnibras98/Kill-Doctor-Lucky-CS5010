@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
 /**
  * This class implements the WorldReader class. It takes in a text file with
  * information about and the world and then creates the world.
@@ -126,6 +127,8 @@ public class World implements WorldReader {
       }
 
       end = true;
+      
+      
 
     } catch (IOException e) {
       // Handle exceptions
@@ -134,6 +137,8 @@ public class World implements WorldReader {
     }
 
   }
+  
+
 
   @Override
   public String toString() {
@@ -202,6 +207,7 @@ public class World implements WorldReader {
     return neighboringRooms;
   }
 
+
   /**
    * Method to get Item(s) by using index.
    * 
@@ -219,6 +225,8 @@ public class World implements WorldReader {
 
     return itemsInRoom;
   }
+  
+
 
   @Override
   public int getWorldRows() {
@@ -257,5 +265,9 @@ public class World implements WorldReader {
   public boolean isEnd() {
     return end;
   }
+
+
+
+
 
 }

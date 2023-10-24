@@ -1,8 +1,14 @@
-package model;
+package driver;
 
 import java.io.File;
 import java.util.List;
 import java.util.Scanner;
+import model.Image;
+import model.Item;
+import model.Room;
+import model.TargetCharacter;
+import model.World;
+
 
 /**
  * The GameDriver class is a driver class to test out runs.
@@ -11,6 +17,7 @@ public class GameDriver {
 
   /**
    * The main driver class.
+   * 
    * @param args Object class arguments.
    */
   public static void main(String[] args) {
@@ -43,7 +50,7 @@ public class GameDriver {
       System.out.println("4- Move target forward");
       System.out.println("5- Show Info of all Rooms");
       System.out.println("6- Create mansion image");
-      
+
       int option = scanner.nextInt();
 
       if (option == 1) {
@@ -51,8 +58,8 @@ public class GameDriver {
         System.out.println("Provide the index number");
         int index = scanner.nextInt();
         Room room = world.getRoomByIndex(index);
-        
-//        room.displayRoomInfo(world.getRooms(), world.getItems());
+
+        //        room.displayRoomInfo(world.getRooms(), world.getItems());
 
         if (room != null) {
           // Print room information
@@ -100,16 +107,15 @@ public class GameDriver {
       } else if (option == 4) {
         targetCharacter.moveCharacterForward();
         targetCharacter.moveCharacterForward();
-        
+
         int indexOfCharacter = targetCharacter.getCharacterPositionIndex();
         System.out.println("Target character is now in " + indexOfCharacter);
-      } else if (option == 5 ) {
-       for(int i = 0; i < 21; i++) { 
-       Room room = world.getRoomByIndex(i);
-       room.displayRoomInfo(world.getRooms(), world.getItems());
-      }
-      }
-      else{
+      } else if (option == 5) {
+        for (int i = 0; i < 21; i++) {
+          Room room = world.getRoomByIndex(i);
+          //       room.displayRoomInfo(world.getRooms(), world.getItems(), world.getPlayers(), world.getBot());
+        }
+      } else {
         Image image = new Image(inputString);
       }
     }

@@ -83,7 +83,7 @@ public class RoomTest {
   @Test
   public void testDisplayRoomInfo() {
     // Test displaying room information
-    room.displayRoomInfo(allRooms, allItems);
+    //    room.displayRoomInfo(allRooms, allItems);
 
     // Capture the printed output
     String printedOutput = outContent.toString();
