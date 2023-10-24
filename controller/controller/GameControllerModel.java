@@ -43,7 +43,7 @@ public class GameControllerModel {
     Scanner scanner = new Scanner(System.in);
     // Print game information and rules
     System.out.println("Welcome to the Game: " + world.getWorldName());
-    System.out.println("The target character is : " + world.getTargetCharacter());
+    System.out.println("The target character is : " + world.getTargetCharacter().getName());
     System.out.println("How many turns do you want to have?");
 
     int maxTurns = scanner.nextInt(); // Set a maximum number of turns
@@ -181,8 +181,7 @@ public class GameControllerModel {
     // Initialize the world
     Scanner scanner = new Scanner(System.in);
     System.out.println("Please provide the path to the World file");
-    String inputString = "C:\\CS5010 WorkSpace\\kill-doctor-lucky\\res\\mansion.txt";
-    // scanner.nextLine();
+    String inputString = scanner.nextLine();
 
     // Create the game controller and start the game
     GameControllerModel gameController = new GameControllerModel(inputString);
