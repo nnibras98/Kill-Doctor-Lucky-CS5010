@@ -1,0 +1,127 @@
+Please provide the path to the World file
+C:\CS5010 WorkSpace\kill-doctor-lucky\res\mansion.txt
+Welcome to the Game: Doctor Lucky's Mansion
+The target character is : Doctor Lucky
+How many turns do you want to have?
+2
+How many human players do you want to create?
+2
+Enter the name of player 1: 
+Nafi
+Enter the maximum carrying capacity of player 1: 
+2
+Enter the initial room of player 1: 
+0
+Enter the name of player 2: 
+Nibras
+Enter the maximum carrying capacity of player 2: 
+2
+Enter the initial room of player 2: 
+1
+How many computer players do you want to create?
+1
+Enter the name of bot 1: 
+Hulk
+Enter the maximum carrying capacity of bot 1: 
+4
+Enter the initial room of bot 1: 
+10
+Select Option
+1- Describe room by room index.
+2- See Player info.
+3- Create mansion image.
+4- Start the game.
+4
+
+Turn 1:
+ 
+It's Nafi's turn.
+Current room index: 0
+Inventory: []
+Choose an action:
+1. Move to a neighboring room
+2. Pick up an item
+3. Look around
+3
+
+Nafi is in room 0 and can see the following rooms:
+- Billiard Room
+- Dining Hall
+- Drawing Room
+- Foyer
+- Kitchen
+It's Nibras's turn.
+Current room index: 1
+Inventory: []
+Choose an action:
+1. Move to a neighboring room
+2. Pick up an item
+3. Look around
+1
+
+Neighbors of Room with Index 1:
+- Armory, Index: 0
+- Dining Hall, Index: 3
+- Drawing Room, Index: 4
+- Parlor, Index: 14
+- Tennessee Room, Index: 17
+- Trophy Room, Index: 18
+- Wine Cellar, Index: 19
+
+Provide the index of the room you want to move to
+14
+
+Nibras moved to room 14
+
+It's the bot's turn
+Neighbors of Room with Index 10:
+Master Suite, Index: 12Nursery, Index: 13Parlor, Index: 14Trophy Room, Index: 18
+Randomly chosen index: 14
+
+Hulk moved to room 14
+No neighbors found for Room with Index 14
+Dr Lucky is in room: 2
+
+Turn 2:
+ 
+It's Nafi's turn.
+Current room index: 0
+Inventory: []
+Choose an action:
+1. Move to a neighboring room
+2. Pick up an item
+3. Look around
+2
+
+Items in the room with Index 0:
+Revolver, 
+Type the name of the item you want to pick: 
+revolver
+Nafi picked up Revolver
+You picked up the Revolver and added it to your inventory.
+It's Nibras's turn.
+Current room index: 14
+Inventory: []
+Choose an action:
+1. Move to a neighboring room
+2. Pick up an item
+3. Look around
+3
+
+Nibras is in room 14 and can see the following rooms:
+- Billiard Room
+- Dining Hall
+- Kitchen
+- Library
+- Servants' Quarters
+- Tennessee Room
+
+It's the bot's turn
+Neighbors of Room with Index 14:
+Billiard Room, Index: 1Dining Hall, Index: 3Kitchen, Index: 8Library, Index: 10Servants' Quarters, Index: 16Tennessee Room, Index: 17
+Randomly chosen index: 1
+
+Hulk moved to room 1
+No neighbors found for Room with Index 1
+Dr Lucky is in room: 4
+Game over! Thank you for playing.
