@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 import model.HumanPlayer;
 import model.Room;
 import model.World;
+import model.Player;
 import org.junit.Before;
 import org.junit.Test;
 

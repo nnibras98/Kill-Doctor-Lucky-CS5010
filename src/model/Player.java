@@ -56,11 +56,17 @@ public abstract class Player {
    */
   
   public void pickUpItem(Item item) {
-    if (inventory.size() < maxCarryCapacity) {
-      inventory.add(item);
-      System.out.println(name + " picked up " + item.getName());
-    } else {
-      System.out.println(name + " cannot carry more items. Inventory is full.");
+    try {
+      if (inventory.size() < maxCarryCapacity) {
+        inventory.add(item);
+        System.out.println(name + " picked up " + item.getName());
+      } else {
+        System.out.println(name + " cannot carry more items. Inventory is full.");
+      }
+    }
+    catch(Exception e) {
+      
+      System.out.println("Your Turn Skipped Due to Invalid Item Entry!");
     }
 
   }
@@ -82,16 +88,7 @@ public abstract class Player {
     }
   }
   
-  /**
-   * display player's info.
-   */
-  
-  public void displayPlayerInfo() {
-    System.out.println("Player Name: " + name);
-    System.out.println("Current Room: " + currentRoomIndex);
-    System.out.println("Carry Capacity: " + maxCarryCapacity);
-    System.out.println("Inventory: " + Arrays.toString(inventory.toArray()));
-  }
+
 
   private boolean isValidRoomIndex(int roomIndex) {
 

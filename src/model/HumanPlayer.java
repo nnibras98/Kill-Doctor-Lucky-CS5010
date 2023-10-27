@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Random;
@@ -71,6 +72,17 @@ public class HumanPlayer extends Player {
     } else {
       System.out.println("Inventory is full. You cannot carry more items.");
     }
+  }
+  
+  /**
+   * display player's info.
+   */
+  
+  public void displayPlayerInfo() {
+    System.out.println("Player Name: " + name);
+    System.out.println("Current Room: " + currentRoomIndex);
+    System.out.println("Carry Capacity: " + maxCarryLimit);
+    System.out.println("Inventory: " + Arrays.toString(inventory.toArray()));
   }
 
   @Override
@@ -181,32 +193,50 @@ public class HumanPlayer extends Player {
   protected void pickUpItem() {
     System.out.println();
 
-    Item itemOfChoice = null;
     List<Item> items = world.getItemsByRoomIndex(currentRoomIndex);
+    if (items.isEmpty()) {
+        System.out.println("There are no items in the room.");
+        return;
+    }
+
     System.out.println("Items in the room with Index " + currentRoomIndex + ":");
     for (Item item : items) {
-      System.out.print(item.getName() + ", ");
+        System.out.print(item.getName() + ", ");
     }
     System.out.println();
 
-    System.out.println("Type the name of the item you want to pick: ");
     Scanner scanner = new Scanner(System.in);
-    String itemTyped = scanner.nextLine();
 
-    for (Item item : items) {
-      if (item.getName().equalsIgnoreCase(itemTyped)) {
-        itemOfChoice = item;
-        super.pickUpItem(itemOfChoice); // Add the item to the inventory
-        items.remove(item); // Remove the item from the room
-        System.out
-            .println("You picked up the " + item.getName() + " and added it to your inventory.");
-        return; // Exit the loop once an item is picked up
-      }
+    Item itemOfChoice = null;
+    boolean validItemPicked = false;
+
+    while (!validItemPicked) {
+        try {
+            System.out.println("Type the name of the item you want to pick: ");
+            String itemTyped = scanner.nextLine();
+
+            for (Item item : items) {
+                if (item.getName().equalsIgnoreCase(itemTyped)) {
+                    itemOfChoice = item;
+                    super.pickUpItem(itemOfChoice); // Add the item to the inventory
+                    items.remove(item); // Remove the item from the room
+                    System.out.println("You picked up the " + item.getName() + " and added it to your inventory.");
+                    validItemPicked = true;
+                    break; // Exit the loop once an item is picked up
+                }
+            }
+
+            if (!validItemPicked) {
+                System.out.println("The item you selected does not exist. Try again.");
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid input. Please enter a valid item name.");
+        }
     }
 
-    System.out.println("The item you selected does not exist.");
     scanner.close();
-  }
+}
+
 
   //
   protected void pickUpItemComputer() {
